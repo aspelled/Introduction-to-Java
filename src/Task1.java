@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Main {
-    public static void Checker(int a, int b, int c) {
+    public static void checker(int a, int b, int c) {
         if (a == b) {
             if (b == c) {
                 System.out.println("Numbers are equal");
@@ -12,19 +12,19 @@ public class Main {
         }
     }
 
-    public static void Dinosaur_Weight(double weight_kg) {
+    public static void dinosaurWeight(double weight_kg) {
         double weight_mg = weight_kg * Math.pow(10, 6);
         double weight_g = weight_kg * Math.pow(10, 3);
         double weight_t = weight_kg / Math.pow(10,3);
         System.out.println("Dinosaur's weight: " + weight_kg + "kg " + weight_mg + "mg " + weight_g + "g " + weight_t + "t");
     }
 
-    public static void RingsSquare(int R, int r) {
+    public static void ringsSquare(int R, int r) {
         double square = Math.PI * (R * R - r * r);
         System.out.println("Rings area: " + square);
     }
 
-    public static void Sequence(int number) {
+    public static void sequence(int number) {
         int temp;
         boolean inc = true;
         boolean dec = true;
@@ -51,15 +51,15 @@ public class Main {
         if (dec) {
             System.out.println("Decreasing sequence");
         } else {
-                if (inc) {
-                    System.out.println("Increasing sequence");
-                } else {
-                    System.out.println("Not an increasing or decreasing sequence");
-                }
+            if (inc) {
+                System.out.println("Increasing sequence");
+            } else {
+                System.out.println("Not an increasing or decreasing sequence");
+            }
         }
     }
 
-    public static void AverageAndGeometricMean(int number) {
+    public static void averageAndGeometricMean(int number) {
         int temp;
         double sum1 = 0;
         double sum2 = 1;
@@ -77,7 +77,7 @@ public class Main {
         System.out.println("Geometric mean: " + geomMean);
     }
 
-    public static void Reverse(int number) {
+    public static void reverse(int number) {
         System.out.println("Before reverse: " + number);
         int newNumber = 0;
         while (number != 0) {
@@ -88,7 +88,7 @@ public class Main {
 
     }
 
-    public static void Swap(int a, int b) {
+    public static void swap(int a, int b) {
         System.out.println("Before swap: " + a + " " + b);
         a = a + b;
         b = a - b;
@@ -106,7 +106,7 @@ public class Main {
                 int number1 = sc.nextInt();
                 int number2 = sc.nextInt();
                 int number3 = sc.nextInt();
-                Checker(number1, number2, number3);
+                checker(number1, number2, number3);
                 break;
             case 2:
                 System.out.print("Enter dinosaur mass in kilograms:");
@@ -116,7 +116,7 @@ public class Main {
                     break;
                 }
                 else {
-                    Dinosaur_Weight(weight);
+                    dinosaurWeight(weight);
                     break;
                 }
             case 3:
@@ -127,28 +127,28 @@ public class Main {
                     System.out.println("Wrong values(R should be greater then r)");
                     break;
                 }
-                RingsSquare(R, r);
+                ringsSquare(R, r);
                 break;
             case 4:
                 System.out.print("Enter the sequence: ");
-                int sequence = sc.nextInt();
-                Sequence(sequence);
+                int seq = sc.nextInt();
+                sequence(seq);
                 break;
             case 5:
                 System.out.print("Enter the number: ");
                 int number = sc.nextInt();
-                AverageAndGeometricMean(Math.abs(number));
+                averageAndGeometricMean(Math.abs(number));
                 break;
             case 6:
                 System.out.print("Enter the number you want to reverse: ");
                 int numberToReverse = sc.nextInt();
-                Reverse(numberToReverse);
+                reverse(numberToReverse);
                 break;
             case 7:
                 System.out.println("Enter 2 numbers you want to swap:");
                 int a = sc.nextInt();
                 int b = sc.nextInt();
-                Swap(a, b);
+                swap(a, b);
                 break;
             case 8:
                 return;
