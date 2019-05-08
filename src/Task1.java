@@ -5,10 +5,10 @@ public class Main {
             if (b == c) {
                 System.out.println("Numbers are equal");
             } else {
-                System.out.println("Numbers are not equal");
+                System.out.println("Numbers are different");
             }
         } else {
-            System.out.println("Numbers are not equal");
+            System.out.println("Numbers are different");
         }
     }
 
@@ -21,7 +21,7 @@ public class Main {
 
     public static void RingsSquare(int R, int r) {
         double square = Math.PI * (R * R - r * r);
-        System.out.println("Ring's area: " + square);
+        System.out.println("Rings area: " + square);
     }
 
     public static void Sequence(int number) {
@@ -38,6 +38,7 @@ public class Main {
                 if (number % 10 == temp) {
                     inc = false;
                     dec = false;
+                    break;
                 }
                 if (number % 10 > temp) {
                     inc = false;
@@ -60,18 +61,20 @@ public class Main {
 
     public static void AverageAndGeometricMean(int number) {
         int temp;
-        double sum = 0;
+        double sum1 = 0;
         double sum2 = 1;
-        int decCounter = 0;
+        int degCounter = 0;
         while (number > 0) {
             temp = number % 10;
             number = number / 10;
-            sum += temp;
+            sum1 += temp;
             sum2 *= temp;
-            decCounter++;
+            degCounter++;
         }
-        System.out.println("Average mean: " + sum / decCounter);
-        System.out.println("Geometric mean: " + Math.pow(sum2, 1.0 / decCounter));
+        double averMean = sum1/degCounter;
+        double geomMean = Math.pow(sum2, 1.0 / degCounter);
+        System.out.println("Average mean: " + averMean);
+        System.out.println("Geometric mean: " + geomMean);
     }
 
     public static void Reverse(int number) {
@@ -108,8 +111,14 @@ public class Main {
             case 2:
                 System.out.print("Enter dinosaur mass in kilograms:");
                 double weight = sc.nextInt();
-                Dinosaur_Weight(weight);
-                break;
+                if(weight <= 0) {
+                    System.out.println("Weight of dinosaur should be greater then 0");
+                    break;
+                }
+                else {
+                    Dinosaur_Weight(weight);
+                    break;
+                }
             case 3:
                 System.out.println("Enter the radius of the large and small circles:");
                 int R = sc.nextInt();
@@ -128,7 +137,7 @@ public class Main {
             case 5:
                 System.out.print("Enter the number: ");
                 int number = sc.nextInt();
-                AverageAndGeometricMean(number);
+                AverageAndGeometricMean(Math.abs(number));
                 break;
             case 6:
                 System.out.print("Enter the number you want to reverse: ");
