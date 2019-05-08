@@ -4,7 +4,7 @@ public class Main {
 
     private static void methodOne(char symbol) {
         if (symbol == 'a' || symbol == 'e' || symbol == 'i' || symbol == 'o' || symbol == 'u') {
-            System.out.println("Symbol " + symbol + " is vowel");
+            System.out.println("Symbol is vowel");
         } else {
             System.out.println("Symbol isn't vowel");
         }
