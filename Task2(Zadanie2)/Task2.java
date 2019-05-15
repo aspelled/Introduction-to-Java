@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class Task1 {
     private static void highestDigit(int value) {
         int digit;
-        int value_max = 0;
+        int max = 0;
         do {
             digit = value%10;
-            if ( digit > value_max ) value_max=digit;
+            if ( digit > max ) max=digit;
 
             value = (value - digit)/10;
 
         } while (value > 0);
-        System.out.println(value_max);
+        System.out.println(max);
     }
     private static void isPalindrome(int number) {
         int reverse = 0;
@@ -95,7 +95,7 @@ public class Task1 {
                 highestDigit(value);
                 break;
             case 2:
-                System.out.println("Введите число: ");
+                System.out.println("Enter number: ");
                 value = sc.nextInt();
                 System.out.println(value);
                 isPalindrome(value);
@@ -125,7 +125,7 @@ public class Task1 {
             case 6:
                 System.out.println("Enter number: ");
                 value = sc.nextInt();
-                System.out.println("Число различных цифр: " + differentNumbers(value));
+                System.out.println("Number of different: " + differentNumbers(value));
                 break;
         }
     }
