@@ -2,7 +2,7 @@ package EPAM_Task2;
 
 import java.util.Scanner;
 
-public class Task1 {
+public class Task2 {
     private static void highestDigit(int value) {
         int digit;
         int max = 0;
