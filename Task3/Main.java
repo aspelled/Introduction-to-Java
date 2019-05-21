@@ -41,13 +41,13 @@ public class Main {
         System.out.println("Geometric: " + Math.pow(geometricCounter, 1.0 / deg));
     }
 
-    public static void localMin(double array[][]){
+    private static void localMin(double matrix[][]){
         double localmin = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++){
-                localmin = array[i][j];
-                if((i+1<array.length && localmin < array[i+1][j] && i-1>=0 && localmin < array[i-1][j])||
-                        (j+1 < array[0].length && localmin < array[i][j+1] && j-1>=0 && localmin < array[i][j-1])){
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++){
+                localmin = matrix[i][j];
+                if((i+1<matrix.length && localmin < matrix[i+1][j] && i-1>=0 && localmin < matrix[i-1][j])||
+                        (j+1 < matrix[0].length && localmin < matrix[i][j+1] && j-1>=0 && localmin < matrix[i][j-1])){
                     System.out.println("Local minimum row " + i + " column " + j);
                     System.out.println();
                     return ;
@@ -59,13 +59,13 @@ public class Main {
         }
         System.out.println("Local minimum: " + localmin);
     }
-    public static  void  localMax(double array[][]){
+    private static  void  localMax(double matrix[][]){
         double localmax = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                localmax = array[i][j];
-                if((i+1<array.length && localmax>array[i+1][j] && i-1>=0 && localmax > array[i-1][j])||
-                        (j+1 < array[0].length && localmax >array[i][j+1] && j-1>=0 && localmax > array[i][j+1])){
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                localmax = matrix[i][j];
+                if((i+1<matrix.length && localmax>matrix[i+1][j] && i-1>=0 && localmax > matrix[i-1][j])||
+                        (j+1 < matrix[0].length && localmax >matrix[i][j+1] && j-1>=0 && localmax > matrix[i][j+1])){
                     System.out.println("Local maximum row " + i + " column " + j);
                     System.out.println();
                     return;
@@ -76,28 +76,28 @@ public class Main {
         }
         System.out.println("Local maximum: " + localmax);
     }
-    public static void transpose(double array[][]){
-        if(array.length == array[0].length) {
-            for (int i = 0; i < array.length; i++) {
-                for (int j = i + 1; j < array[0].length; j++) {
-                    double temp = array[i][j];
-                    array[i][j] = array[j][i];
-                    array[j][i] = temp;
+    private static void transpose(double matrix[][]){
+        if(matrix.length == matrix[0].length) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = i + 1; j < matrix[0].length; j++) {
+                    double temp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = temp;
                 }
             }
             System.out.println("Transposed matrix: ");
-            for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j < array[0].length; j++) {
-                    System.out.print(array[i][j] + " ");
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[0].length; j++) {
+                    System.out.print(matrix[i][j] + " ");
                 }
                 System.out.println();
             }
         }
         else {
-            double[][] transposedMatrix = new double[array[0].length][array.length];
-            for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j < array[i].length; j++) {
-                    transposedMatrix[j][i] = array[i][j];
+            double[][] transposedMatrix = new double[matrix[0].length][matrix.length];
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    transposedMatrix[j][i] = matrix[i][j];
                 }
             }
             System.out.println("Transposed matrix: ");
