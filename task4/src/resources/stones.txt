@@ -1,0 +1,7 @@
+gemstone|Ruby|100|100|10|Pink|Corundum
+gemstone|Diamond|13|13|13|Grey|Diamond
+gemstone|Sapphire|70|80|17|Blue|Corundum
+gemstone|Emerald|50|13|21|Green|Beryl
+organicstone|Amber|12|12|2|Yellow|22.5
+organicstone|Coral|21|21|12|Red|37.5
+organicstone|Pearls|61|16|17|Yellow|35
